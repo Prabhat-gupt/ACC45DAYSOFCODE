@@ -14,15 +14,15 @@ public class Day18ChocolaProblem {
         int hp = 1, vp = 1;
         int cost = 0;
 
-        while(h<costhor.length && v<costver.length){
-            if(costver[v] <= costhor[v]){
-                cost += (costhor[h] * vp);
-                hp++;
-                h++;
-            }else{
+        while(h < costhor.length && v < costver.length){
+            if(costhor[h] <= costver[v]){
                 cost += (costver[v] * hp);
                 vp++;
-                v++;    
+                v++;
+            }else{
+                cost += (costhor[h] * vp);
+                hp++;
+                h++;    
             }
         }
 
